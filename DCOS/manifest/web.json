@@ -1,5 +1,5 @@
 {
-    "id": "/robotshop/web",
+    "id": "/demo/robotshop/web",
     "backoffFactor": 1.15,
     "backoffSeconds": 30,
     "container": {
@@ -52,5 +52,9 @@
     },
     "healthChecks": [],
     "fetch": [],
-    "constraints": []
+    "constraints": [],
+    "labels":{
+      "HAPROXY_GROUP":"external",
+      "HAPROXY_0_VHOST":"gl-poc-tea-tff096-pub-agt-elb-1865881313.us-west-1.elb.amazonaws.com"
+    }
   }

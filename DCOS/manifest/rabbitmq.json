@@ -1,5 +1,5 @@
 {
-    "id": "/robotshop/rabbitmq",
+    "id": "/demo/robotshop/rabbitmq",
     "backoffFactor": 1.15,
     "backoffSeconds": 30,
     "container": {
@@ -7,14 +7,14 @@
         {
           "containerPort": 0,
           "labels": {
-            "VIP_0": "/robotshop/rabbitmq:5672"
+            "VIP_0": "/demo/robotshop/rabbitmq:5672"
           },
           "servicePort": 10004
         },
         {
           "containerPort": 0,
           "labels": {
-            "VIP_1": "/robotshop/rabbitmq:15672"
+            "VIP_1": "/demo/robotshop/rabbitmq:15672"
           },
           "servicePort": 10005
         }

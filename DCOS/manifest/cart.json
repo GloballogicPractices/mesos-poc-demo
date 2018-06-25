@@ -1,5 +1,5 @@
 {
-    "id": "/robotshop/cart",
+    "id": "/demo/robotshop/cart",
     "backoffFactor": 1.15,
     "backoffSeconds": 30,
     "container": {
@@ -7,7 +7,7 @@
         {
           "containerPort": 0,
           "labels": {
-            "VIP_0": "/robotshop/cart:8080"
+            "VIP_0": "/demo/robotshop/cart:8080"
           },
           "servicePort": 10008
         }

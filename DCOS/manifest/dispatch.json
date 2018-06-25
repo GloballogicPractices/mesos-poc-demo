@@ -1,5 +1,5 @@
 {
-    "id": "/robotshop/dispatch",
+    "id": "/demo/robotshop/dispatch",
     "backoffFactor": 1.15,
     "backoffSeconds": 30,
     "container": {

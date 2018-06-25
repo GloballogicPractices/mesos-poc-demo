@@ -1,5 +1,5 @@
 {
-    "id": "/robotshop/mongodb",
+    "id": "/demo/robotshop/mongodb",
     "backoffFactor": 1.15,
     "backoffSeconds": 30,
     "container": {
@@ -7,7 +7,7 @@
         {
           "containerPort": 0,
           "labels": {
-            "VIP_0": "/robotshop/mongodb:27017"
+            "VIP_0": "/demo/robotshop/mongodb:27017"
           },
           "servicePort": 10002
         }
