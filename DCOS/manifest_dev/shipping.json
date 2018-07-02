@@ -1,5 +1,5 @@
 {
-    "id": "/demo/robotshop/payment",
+    "id": "/dev/robotshop/shipping",
     "backoffFactor": 1.15,
     "backoffSeconds": 30,
     "container": {
@@ -7,28 +7,29 @@
         {
           "containerPort": 0,
           "labels": {
-            "VIP_0": "/demo/robotshop/payment:8080"
+            "VIP_0": "/dev/robotshop/shipping:8080"
           },
-          "servicePort": 10009
+          "servicePort": 10001
         }
       ],
       "type": "DOCKER",
       "volumes": [],
       "docker": {
-        "image": "robotshop/rs-payment:latest",
+        "image": "robotshop/rs-shipping:latest",
         "forcePullImage": false,
         "privileged": false,
         "parameters": []
       }
     },
-    "cpus": 0.2,
+    "cpus": 0.5,
     "disk": 0,
     "env": {
-      "AMQP_HOST": "robotshoprabbitmq.marathon.l4lb.thisdcos.directory"
+      "DB_HOST": "devrobotshopmysql.marathon.l4lb.thisdcos.directory",
+      "CART_ENDPOINT": "devrobotshopcart.marathon.l4lb.thisdcos.directory:8080"
     },
     "instances": 1,
     "maxLaunchDelaySeconds": 900,
-    "mem": 128,
+    "mem": 512,
     "gpus": 0,
     "networks": [
       {

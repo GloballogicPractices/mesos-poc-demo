@@ -1,5 +1,5 @@
 {
-    "id": "/demo/robotshop/rabbitmq",
+    "id": "/prod/robotshop/mongodb",
     "backoffFactor": 1.15,
     "backoffSeconds": 30,
     "container": {
@@ -7,22 +7,15 @@
         {
           "containerPort": 0,
           "labels": {
-            "VIP_0": "/demo/robotshop/rabbitmq:5672"
+            "VIP_0": "/prod/robotshop/mongodb:27017"
           },
-          "servicePort": 10004
-        },
-        {
-          "containerPort": 0,
-          "labels": {
-            "VIP_1": "/demo/robotshop/rabbitmq:15672"
-          },
-          "servicePort": 10005
+          "servicePort": 10002
         }
       ],
       "type": "DOCKER",
       "volumes": [],
       "docker": {
-        "image": "rabbitmq:3.7-management-alpine",
+        "image": "robotshop/rs-mongodb:latest",
         "forcePullImage": false,
         "privileged": false,
         "parameters": []

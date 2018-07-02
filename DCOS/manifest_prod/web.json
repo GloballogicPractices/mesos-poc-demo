@@ -1,5 +1,5 @@
 {
-    "id": "/demo/robotshop/web",
+    "id": "/prod/robotshop/web",
     "backoffFactor": 1.15,
     "backoffSeconds": 30,
     "container": {
@@ -24,11 +24,11 @@
     "cpus": 0.1,
     "disk": 0,
     "env": {
-      "PAYMENT_HOST": "robotshoppayment.marathon.l4lb.thisdcos.directory",
-      "USER_HOST": "robotshopuser.marathon.l4lb.thisdcos.directory",
-      "CART_HOST": "robotshopcart.marathon.l4lb.thisdcos.directory",
-      "CATALOGUE_HOST": "robotshopcatalogue.marathon.l4lb.thisdcos.directory",
-      "SHIPPING_HOST": "robotshopshipping.marathon.l4lb.thisdcos.directory"
+      "PAYMENT_HOST": "prodrobotshoppayment.marathon.l4lb.thisdcos.directory",
+      "USER_HOST": "prodrobotshopuser.marathon.l4lb.thisdcos.directory",
+      "CART_HOST": "prodrobotshopcart.marathon.l4lb.thisdcos.directory",
+      "CATALOGUE_HOST": "prodrobotshopcatalogue.marathon.l4lb.thisdcos.directory",
+      "SHIPPING_HOST": "prodrobotshopshipping.marathon.l4lb.thisdcos.directory"
     },
     "instances": 1,
     "maxLaunchDelaySeconds": 900,

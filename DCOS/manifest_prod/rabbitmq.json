@@ -1,5 +1,5 @@
 {
-    "id": "/demo/robotshop/mysql",
+    "id": "/prod/robotshop/rabbitmq",
     "backoffFactor": 1.15,
     "backoffSeconds": 30,
     "container": {
@@ -7,15 +7,22 @@
         {
           "containerPort": 0,
           "labels": {
-            "VIP_0": "/demo/robotshop/mysql:3306"
+            "VIP_0": "/prod/robotshop/rabbitmq:5672"
           },
-          "servicePort": 10000
+          "servicePort": 10004
+        },
+        {
+          "containerPort": 0,
+          "labels": {
+            "VIP_1": "/prod/robotshop/rabbitmq:15672"
+          },
+          "servicePort": 10005
         }
       ],
       "type": "DOCKER",
       "volumes": [],
       "docker": {
-        "image": "robotshop/rs-shipping-db:latest",
+        "image": "rabbitmq:3.7-management-alpine",
         "forcePullImage": false,
         "privileged": false,
         "parameters": []
@@ -25,7 +32,7 @@
     "disk": 0,
     "instances": 1,
     "maxLaunchDelaySeconds": 900,
-    "mem": 512,
+    "mem": 256,
     "gpus": 0,
     "networks": [
       {

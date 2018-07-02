@@ -1,31 +1,34 @@
 {
-    "id": "/demo/robotshop/user",
+    "id": "/dev/robotshop/web",
     "backoffFactor": 1.15,
     "backoffSeconds": 30,
     "container": {
       "portMappings": [
         {
-          "containerPort": 0,
-          "labels": {
-            "VIP_0": "/demo/robotshop/user:8080"
-          },
-          "servicePort": 10007
+          "containerPort": 8080,
+          "hostPort": 0,
+          "protocol": "tcp",
+          "servicePort": 10100,
+          "name": "web"
         }
       ],
       "type": "DOCKER",
       "volumes": [],
       "docker": {
-        "image": "robotshop/rs-user:latest",
+        "image": "robotshop/rs-web:latest",
         "forcePullImage": false,
         "privileged": false,
         "parameters": []
       }
     },
-    "cpus": 0.2,
+    "cpus": 0.1,
     "disk": 0,
     "env": {
-      "REDIS_HOST": "robotshopredis.marathon.l4lb.thisdcos.directory",
-      "MONGO_URL": "mongodb://robotshopmongodb.marathon.l4lb.thisdcos.directory:27017/users"
+      "PAYMENT_HOST": "devrobotshoppayment.marathon.l4lb.thisdcos.directory",
+      "USER_HOST": "devrobotshopuser.marathon.l4lb.thisdcos.directory",
+      "CART_HOST": "devrobotshopcart.marathon.l4lb.thisdcos.directory",
+      "CATALOGUE_HOST": "devrobotshopcatalogue.marathon.l4lb.thisdcos.directory",
+      "SHIPPING_HOST": "devrobotshopshipping.marathon.l4lb.thisdcos.directory"
     },
     "instances": 1,
     "maxLaunchDelaySeconds": 900,
@@ -49,5 +52,9 @@
     },
     "healthChecks": [],
     "fetch": [],
-    "constraints": []
+    "constraints": [],
+    "labels":{
+      "HAPROXY_GROUP":"external",
+      "HAPROXY_0_VHOST":"gl-poc-tea-tff096-dev-elb-634032854.us-west-1.elb.amazonaws.com"
+    }
   }

@@ -1,5 +1,5 @@
 {
-    "id": "/demo/robotshop/shipping",
+    "id": "/dev/robotshop/mysql",
     "backoffFactor": 1.15,
     "backoffSeconds": 30,
     "container": {
@@ -7,26 +7,22 @@
         {
           "containerPort": 0,
           "labels": {
-            "VIP_0": "/demo/robotshop/shipping:8080"
+            "VIP_0": "/dev/robotshop/mysql:3306"
           },
-          "servicePort": 10001
+          "servicePort": 10000
         }
       ],
       "type": "DOCKER",
       "volumes": [],
       "docker": {
-        "image": "robotshop/rs-shipping:latest",
+        "image": "robotshop/rs-shipping-db:latest",
         "forcePullImage": false,
         "privileged": false,
         "parameters": []
       }
     },
-    "cpus": 0.5,
+    "cpus": 0.2,
     "disk": 0,
-    "env": {
-      "DB_HOST": "robotshopmysql.marathon.l4lb.thisdcos.directory",
-      "CART_ENDPOINT": "robotshopcart.marathon.l4lb.thisdcos.directory:8080"
-    },
     "instances": 1,
     "maxLaunchDelaySeconds": 900,
     "mem": 512,

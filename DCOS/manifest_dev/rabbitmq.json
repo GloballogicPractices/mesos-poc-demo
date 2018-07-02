@@ -1,5 +1,5 @@
 {
-    "id": "/demo/robotshop/cart",
+    "id": "/dev/robotshop/rabbitmq",
     "backoffFactor": 1.15,
     "backoffSeconds": 30,
     "container": {
@@ -7,15 +7,22 @@
         {
           "containerPort": 0,
           "labels": {
-            "VIP_0": "/demo/robotshop/cart:8080"
+            "VIP_0": "/dev/robotshop/rabbitmq:5672"
           },
-          "servicePort": 10008
+          "servicePort": 10004
+        },
+        {
+          "containerPort": 0,
+          "labels": {
+            "VIP_1": "/dev/robotshop/rabbitmq:15672"
+          },
+          "servicePort": 10005
         }
       ],
       "type": "DOCKER",
       "volumes": [],
       "docker": {
-        "image": "robotshop/rs-cart:latest",
+        "image": "rabbitmq:3.7-management-alpine",
         "forcePullImage": false,
         "privileged": false,
         "parameters": []
@@ -23,13 +30,9 @@
     },
     "cpus": 0.2,
     "disk": 0,
-    "env": {
-      "REDIS_HOST": "robotshopredis.marathon.l4lb.thisdcos.directory",
-      "CATALOGUE_HOST": "robotshopcatalogue.marathon.l4lb.thisdcos.directory"
-    },
     "instances": 1,
     "maxLaunchDelaySeconds": 900,
-    "mem": 128,
+    "mem": 256,
     "gpus": 0,
     "networks": [
       {
