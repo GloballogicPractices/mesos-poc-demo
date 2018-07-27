@@ -55,6 +55,6 @@
     "constraints": [],
     "labels":{
       "HAPROXY_GROUP":"external",
-      "HAPROXY_0_VHOST":"gl-poc-tea-tff096-pub-agt-elb-1865881313.us-west-1.elb.amazonaws.com"
+      "HAPROXY_0_VHOST":"gl-poc-tea-tf07e7-pub-agt-elb-1506421571.us-west-1.elb.amazonaws.com"
     }
   }
